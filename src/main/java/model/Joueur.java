@@ -8,7 +8,13 @@ import javax.persistence.Id;
 public class Joueur {
 	int id;
 	String name;
+	String hashPass;
+	IHashPolicy hashPolicy;
 
+	public Joueur(){
+		hashPolicy = new HashSHA256();
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -21,8 +27,8 @@ public class Joueur {
 	public int getId() {
 		return id;
 	}
-
-	public void setId(int id) {
-		this.id = id;
+	
+	public void setPassword(String s) throws Exception {
+		hashPass = hashPolicy.hashString(s);
 	}
 }
