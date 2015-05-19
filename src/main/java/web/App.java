@@ -18,11 +18,9 @@ public class App {
 		tx.begin();
 		
 		Joueur joueur = new Joueur();
-		joueur.setId(1);
 		joueur.setName("toto");
 		
 		Joueur joueur2 = new Joueur();
-		joueur2.setId(2);
 		joueur2.setName("titi");
 		
 
